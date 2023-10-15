@@ -1,0 +1,172 @@
+/* Made with love by OMi at CodeCyan
+  @author OMi Shah
+  @organization CodeCyan
+  @web https://codecyan.com
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+  --font-size: 18px;
+  --accent: #266BAA;
+  /* #68C0E5 */
+  --title-color: #0e2f3e;
+}
+
+body {
+  font-size: var(--font-size);
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  color: var(--accent);
+}
+
+a:hover {
+  color: var(--title-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--title-color);
+}
+
+.nav-link {
+  text-transform: uppercase;
+  font-family: "Space Mono", monospace;
+}
+
+.nav-link.active {
+  color: var(--accent) !important;
+  font-weight: bold;
+}
+
+.nav-link.active::before {
+  content: "( ";
+}
+
+.nav-link.active::after {
+  content: " )";
+}
+
+.g-codecyan {
+  --bs-gutter-x: 3rem;
+}
+
+.text-accent-codecyan {
+  color: var(--accent);
+}
+
+.btn-accent-codecyan {
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: var(--accent);
+  --bs-btn-border-color: var(--accent);
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: var(--title-color);
+  --bs-btn-hover-border-color: var(--title-color);
+}
+
+.bg-accent-codecyan {
+  background-color: var(--accent);
+}
+
+.bg-odd-codecyan {
+  background-color: #f9f7f1;
+}
+
+.bg-hero-codecyan {
+  background-color: #f9f7f1;
+  background-image: url("/assets/patternhero.png");
+}
+
+.bg-blue{
+  background-color: #68bfe522;
+}
+
+.bg-yellow-codecyan {
+  background-color: #fcd252;
+}
+
+.bg-blue-codecyan {
+  background-color: #30376d;
+}
+
+.bg-green-codecyan {
+  background-color: #2e646e;
+}
+
+a.dev-codecyan {
+  text-decoration: none;
+}
+
+a.dev-codecyan:hover {
+  color: var(--title-color);
+  text-decoration: underline;
+}
+
+.service-img-codecyan {
+  min-width: 50px;
+  max-width: 100px;
+}
+
+.anim-codecyan img {
+  transition: transform 0.25s;
+}
+
+.anim-codecyan:hover img {
+  transform: scale(1.05);
+}
+
+.welcome {
+  padding-bottom: 22vw;
+}
+
+.textWelcome {
+  padding-top: 5vw;
+}
+
+.text-blue{
+  color: var(--accent);
+}
+
+.aboutus {
+  text-align: justify;
+}
+
+.category {
+  height: 17rem;
+  width: 1vw;
+}
+
+.techpo {
+  width: 3rem;
+}
+
+.logoSEHATI {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 25px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+#contact{
+  text-align: center;
+}
+
