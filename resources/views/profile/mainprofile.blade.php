@@ -135,7 +135,7 @@
                                 <hr>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <button class="btn btn-primary float-end mx-1">Perbarui data kesehatan</button>
+                                        <a href="/edit/{{$user->username}}" class="btn btn-primary float-end mx-1">Perbarui data pengguna</a>
 
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
@@ -335,7 +335,7 @@
         <div class="py-2">
             <div class="row justify-content-between gy-5">
                 <div class="col-md-6">TECHNOLOGY EUPHORIA 2023
-                    <img class="techpo" src="assets/techpo.png" alt="Technology Euphoria 2023">
+                    <img class="techpo" src="/assets/techpo.png" alt="Technology Euphoria 2023">
                     <span style="font-weight: 700;">&#169; Tim Wong Sepele</span>
                 </div>
             </div>

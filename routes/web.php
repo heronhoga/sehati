@@ -43,4 +43,8 @@ Route::group(['middleware' => 'auth'], function() {
 
     //--ADDING HEALTH DATA
     Route::post('/addhealth', [ProfileController::class, 'updateHealth'])->name('updatehealth');
+
+    //--EDITING USER'S DATA
+    Route::get('/edit/{username}', [ProfileController::class, 'editProfile'])->name('editdata');
+    Route::put('/update/{username}', [ProfileController::class, 'updateProfile'])->name('updatedata');
 });

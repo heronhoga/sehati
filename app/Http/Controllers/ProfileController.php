@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Health;
 use App\Models\User;
+use Faker\Core\File as CoreFile;
+use Illuminate\Http\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -113,5 +116,48 @@ class ProfileController extends Controller
 
         return redirect('profile');
         
+    }
+    function editProfile($username) {
+        $user = User::where('username', $username)->first();
+        return view('profile.editprofile')->with('user', $user);
+    }
+
+    function updateProfile($username, Request $request) {
+        // dd($request->all());
+        $user = User::where('username', session('user_data.username'))->first();
+
+        if (!$request->profilepic) {
+            $request->validate([
+                'name'=> 'required',
+                'city'=> 'required',
+            ]);
+
+            $user->name = $request->name;
+            $user->city = $request->city;
+            $user->save();
+
+            return redirect('profile');
+        } else {
+            $request->validate([
+                'name'=> 'required',
+                'city'=> 'required',
+                'profilepic'=>'required|image|mimes:jpeg,jpg,png|max:20480'
+            ]);
+
+            unlink(storage_path('app/public/avatar/') .$user->profilepic);
+            // ('public/avatar'.$user->profilepic);
+            
+            $file = $request->file('profilepic');
+            $filename = 'ava-' . time() . $file->getClientOriginalExtension();
+            $path = $file->storeAs('public/avatar', $filename);
+            $imgName = $filename; 
+    
+            $user->name = $request->name;
+            $user->city = $request->city;
+            $user->profilepic = $imgName;
+            $user->save();
+
+            return redirect('profile');
+        }
     }
 }
